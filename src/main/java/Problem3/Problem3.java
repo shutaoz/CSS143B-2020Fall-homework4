@@ -22,7 +22,7 @@ public class Problem3 {
     public static void printHelp(ListNode reversed, PrintStream print){
         ListNode temp = reversed;
         while(temp != null){
-            print.print(temp.val);
+            print.println(temp.val);
             temp = temp.next;
         }
 

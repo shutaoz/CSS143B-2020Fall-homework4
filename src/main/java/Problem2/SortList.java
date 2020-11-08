@@ -18,16 +18,32 @@ public class SortList {
 
     public static ListNode findMidAndBreak(ListNode head) {
         // homework
-        ListNode prev = null, slow = head, fast = head;
+        /*ListNode slow = head, fast = head;
 
         while (fast != null && fast.next != null) {
-            prev = slow;
+            fast = fast.next;
+            if(fast.next == null)
+                break;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        ListNode OH = slow.next;
+        slow.next = null;
+
+        return OH;
+
+         */
+        if(head == null || head.next == null)    return null;
+
+        ListNode pre = null, slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            pre = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
+        pre.next = null;
 
-        //prev.next = null;
-        return slow.next;
+        return slow;
     }
 
     public static ListNode mergeLists(ListNode l1, ListNode l2) {
